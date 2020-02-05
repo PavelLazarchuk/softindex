@@ -1,5 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+const border = '1px solid black';
+
 const useStyles = makeStyles(() => ({
 	root: {
 		backgroundColor: '#ffffff',
@@ -18,10 +20,10 @@ const useStyles = makeStyles(() => ({
 	table: {
 		minWidth: '750px',
 		maxWidth: '1000px',
-		borderTop: '1px solid black',
+		borderTop: border,
 	},
 	tableCell: {
-		borderRight: '1px solid black',
+		borderRight: border,
 		'&:last-child': {
 			borderRight: 0,
 		},
