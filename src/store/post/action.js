@@ -14,6 +14,7 @@ const deletePost = payload => {
 	};
 };
 
+// eslint-disable-next-line no-unused-vars
 const error = payload => {
 	return {
 		type: ERROR,
@@ -23,7 +24,8 @@ const error = payload => {
 
 export const addOnePost = data => {
 	return dispatch => {
-		dispatch(addPost(data));
+		localStorage.setItem('post', JSON.stringify(data));
+		dispatch(addPost(JSON.parse(localStorage.getItem('post'))));
 	};
 };
 

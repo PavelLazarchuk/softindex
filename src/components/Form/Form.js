@@ -4,22 +4,26 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import useStyles from './styles';
+import { phoneRegExp, nameRegExp } from './regExp';
 import Input from '../../shared/Input';
 import Radio from '../../shared/Radio';
 import { addOnePost } from '../../store/post/action';
 
 const Schema = Yup.object().shape({
 	firstName: Yup.string()
-		.min(2, 'Too Short!')
-		.max(30, 'Too Long!')
+		.matches(nameRegExp, 'Name is not valid')
+		.min(3, 'Too Short!')
+		.max(20, 'Too Long!')
 		.required('Required'),
 	lastName: Yup.string()
-		.min(2, 'Too Short!')
-		.max(30, 'Too Long!')
+		.matches(nameRegExp, 'Last name is not valid')
+		.min(3, 'Too Short!')
+		.max(20, 'Too Long!')
 		.required('Required'),
 	phone: Yup.string()
+		.matches(phoneRegExp, 'Phone is not valid')
 		.min(10, 'Too Short!')
-		.max(17, 'Too Long!')
+		.max(12, 'Too Long!')
 		.required('Required'),
 	age: Yup.number()
 		.min(10, 'few, from 10 to 130')
