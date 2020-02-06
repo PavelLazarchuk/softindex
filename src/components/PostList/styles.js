@@ -18,8 +18,7 @@ const useStyles = makeStyles(() => ({
 		marginBottom: '20px',
 	},
 	table: {
-		minWidth: '750px',
-		maxWidth: '1000px',
+		width: '100%',
 		borderTop: border,
 	},
 	tableCell: {

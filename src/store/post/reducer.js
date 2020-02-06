@@ -1,4 +1,4 @@
-import { ADD_ONE_POST, DELETE_ONE_POST, ERROR } from './actionNames';
+import { ADD_ONE_POST, DELETE_ONE_POST } from './actionNames';
 
 const postList =
 	localStorage.getItem('post') !== null
@@ -23,13 +23,6 @@ export default (state = initialState, action) => {
 			return {
 				list: action.payload,
 				isError: false,
-			};
-
-		case ERROR:
-			return {
-				...state,
-				isError: true,
-				error: action.payload,
 			};
 
 		default:

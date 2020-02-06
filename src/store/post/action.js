@@ -1,4 +1,4 @@
-import { ADD_ONE_POST, DELETE_ONE_POST, ERROR } from './actionNames';
+import { ADD_ONE_POST, DELETE_ONE_POST } from './actionNames';
 
 const addPost = payload => {
 	return {
@@ -10,14 +10,6 @@ const addPost = payload => {
 const deletePost = payload => {
 	return {
 		type: DELETE_ONE_POST,
-		payload,
-	};
-};
-
-// eslint-disable-next-line no-unused-vars
-const error = payload => {
-	return {
-		type: ERROR,
 		payload,
 	};
 };

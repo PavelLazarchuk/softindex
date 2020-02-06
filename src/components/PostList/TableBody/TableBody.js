@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import TableBody from '@material-ui/core/TableBody';
 
 import PostItem from '../../PostItem';
 
-const EnhancedTableBody = ({ classes, postList }) => {
-	const [list, setList] = useState([]);
-
+const EnhancedTableBody = ({ classes, postList, handleChangeList, list }) => {
 	useEffect(() => {
-		setList(postList);
-	}, [postList]);
+		handleChangeList(postList);
+	}, [postList, handleChangeList]);
 
 	return (
 		<TableBody>
